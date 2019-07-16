@@ -1,13 +1,13 @@
 {
-  "name": "Starfall",
-  "version": "0.1.0",
-  "description": "Starfall game (Phaser 3 + TypeScript)",
+  "name": "videogame",
+  "version": "0.0.1",
+  "description": "Videgame (Phaser 3 + TypeScript)",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack --watch & live-server --port=8085"
   },
-  "author": "Mariya Davydova",
+  "author": "Alberto Fuentes",
   "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.1",

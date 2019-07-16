@@ -11,7 +11,7 @@ export class WelcomeScene extends Phaser.Scene {
   }
 
   create(): void {
-    var titleText: string = "Starfall";
+    var titleText: string = "Tapper";
     this.title = this.add.text(150, 200, titleText,
       { font: '128px Arial Bold', fill: '#FBFBAC' });
 

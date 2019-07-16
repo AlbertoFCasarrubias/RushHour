@@ -18,12 +18,12 @@ const config: GameConfig = {
   backgroundColor: "#18216D"
 };
 
-export class StarfallGame extends Phaser.Game {
+export class TapperGame extends Phaser.Game {
   constructor(config: GameConfig) {
     super(config);
   }
 };
 
 window.onload = () => {
-  var game = new StarfallGame(config);
+  var game = new TapperGame(config);
 };

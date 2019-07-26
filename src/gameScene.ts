@@ -16,6 +16,9 @@ export class GameScene extends Phaser.Scene {
   maxCustomersPerLine = 4;
   gameOver = false;
   collisionTimer: any;
+  cajero: any;
+  cursors: any;
+  velocitityCajero: any = 150;
 
   constructor() {
     super({
@@ -35,6 +38,7 @@ export class GameScene extends Phaser.Scene {
     this.load.atlas('dpad', 'assets/dpad.png', 'assets/dpad.json');
     this.load.image("customer", "assets/customer.jpg");
     this.load.image("cashier", "assets/cashier.png");
+    this.load.image("cajero", "assets/cashier.png");
 
     this.load.image('sky', 'assets/sky.png');
     this.load.image("star", "assets/star.png");
@@ -63,6 +67,12 @@ export class GameScene extends Phaser.Scene {
     this.cashiers.create(580, 350 , 'cashier');
     this.cashiers.create(580, 500 , 'cashier');
 
+    //this.cajero.setCollideWorldBounds(true);
+    this.cajero = this.physics.add.image(720, 250, "customer");
+    this.physics.add.collider(this.cajero, this.customers, this.onCajeroCollide(), null, this);
+
+    this.cursors = this.input.keyboard.createCursorKeys();
+
     //this.customers.push(this.physics.add.image(-70,160, "customer"));
     //this.customers.push(this.physics.add.image(-70,160, "customer"));
 
@@ -90,21 +100,6 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(time: number): void {
-    /*
-    var diff: number = time - this.lastStarTime;
-    if (diff > this.delta) {
-      this.lastStarTime = time;
-      if (this.delta > 500) {
-        this.delta -= 20;
-      }
-      this.emitStar();
-    }
-    this.info.text =
-      this.starsCaught + " caught - " +
-      this.starsFallen + " fallen (max 3)";
-
-     */
-
     var diff: number = time - this.lastStarTime;
     if (diff > this.delta) {
       this.lastStarTime = time;
@@ -113,8 +108,54 @@ export class GameScene extends Phaser.Scene {
       }
       this.emitCustomer();
       this.areLinesFull();
-      
     }
+
+    /*
+    if (this.cursors.left.isDown)
+    {
+      this.cajero.setVelocityX(-160);
+      //player.anims.play('left', true);
+    }
+    else if (this.cursors.right.isDown)
+    {
+      this.cajero.setVelocityX(160);
+      //player.anims.play('right', true);
+    }
+    else
+    {
+      this.cajero.setVelocityX(0);
+      //player.anims.play('turn');
+    }
+    if (this.cursors.up.isDown && this.cajero.body.touching.down)
+    {
+      this.cajero.setVelocityY(-530);
+    }
+    */
+
+    if (this.cursors.left.isDown)
+    {
+      //this.cajero.setVelocityX(-160);
+      //player.anims.play('left', true);
+    }
+    else if (this.cursors.right.isDown)
+    {
+      //this.cajero.setVelocityX(160);
+      //player.anims.play('right', true);
+    }
+    else if (this.cursors.up.isDown )
+    {
+      this.cajero.setVelocityY(this.velocitityCajero * -1);
+    }
+    else if (this.cursors.down.isDown )
+    {
+      this.cajero.setVelocityY(this.velocitityCajero );
+    }
+    else
+    {
+      this.cajero.setVelocityY(0);
+    }
+
+
 
 
   }
@@ -182,6 +223,8 @@ export class GameScene extends Phaser.Scene {
         break;
     }
 
+    this.lines[table]++;
+
     customer = this.physics.add.image(x, y, "customer");
     customer.setVelocity(Phaser.Math.Between(50, 200), 0);
 
@@ -197,7 +240,7 @@ export class GameScene extends Phaser.Scene {
   {
     clearTimeout(this.collisionTimer);
     this.collisionTimer = setTimeout(()=>{
-      this.lines[table]++;
+
     }, 500);
 
   }
@@ -209,6 +252,14 @@ export class GameScene extends Phaser.Scene {
       customer.setVelocity(0,0);
       this.addCollisionLine(table);
     }
+  }
+
+  private onCajeroCollide() : () => void
+  {
+    return function(){
+      console.log('cajero choco');
+    }
+
   }
 
   private onCustomersCollide(customer, table) : () => void

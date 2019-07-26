@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="199623d9-e277-42fa-a651-38898703446b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameScene.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -66,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gameScene.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
+            <state relative-caret-position="355">
+              <caret line="255" column="24" selection-start-line="255" selection-start-column="24" selection-end-line="255" selection-end-column="24" />
               <folding>
                 <element signature="n#!!block;n#onClick#0;n#GameScene#0" />
                 <element signature="n#!!block;n#onFall#0;n#GameScene#0" />
@@ -171,12 +169,12 @@
       <workItem from="1563242976194" duration="4941000" />
       <workItem from="1563287807624" duration="4378000" />
       <workItem from="1563396150741" duration="581000" />
-      <workItem from="1564156944631" duration="3172000" />
+      <workItem from="1564156944631" duration="3868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13072000" />
+    <option name="totallyTimeSpent" value="13768000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="841" extended-state="6" />
@@ -214,7 +212,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/gameScene.ts</url>
-          <line>35</line>
+          <line>36</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -284,8 +282,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameScene.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
+        <state relative-caret-position="355">
+          <caret line="255" column="24" selection-start-line="255" selection-start-column="24" selection-end-line="255" selection-end-column="24" />
           <folding>
             <element signature="n#!!block;n#onClick#0;n#GameScene#0" />
             <element signature="n#!!block;n#onFall#0;n#GameScene#0" />

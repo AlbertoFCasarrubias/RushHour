@@ -19,6 +19,7 @@ export class GameScene extends Phaser.Scene {
   cajero: any;
   cursors: any;
   velocitityCajero: any = 150;
+  cajasOcupadas: any = [0,0,0,0];
 
   constructor() {
     super({
@@ -69,7 +70,8 @@ export class GameScene extends Phaser.Scene {
 
     //this.cajero.setCollideWorldBounds(true);
     this.cajero = this.physics.add.image(720, 250, "customer");
-    this.physics.add.collider(this.cajero, this.customers, this.onCajeroCollide(), null, this);
+    this.physics.add.collider(this.cajero, this.cashiers, this.onCajeroCollide(), null, this);
+
 
     this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -155,7 +157,7 @@ export class GameScene extends Phaser.Scene {
       this.cajero.setVelocityY(0);
     }
 
-
+    console.log('this.cajasOcupadas ' , this.cajasOcupadas);
 
 
   }
@@ -251,6 +253,7 @@ export class GameScene extends Phaser.Scene {
       customer.setTint(0xff0000);
       customer.setVelocity(0,0);
       this.addCollisionLine(table);
+      this.cajasOcupadas[table] = 1;
     }
   }
 

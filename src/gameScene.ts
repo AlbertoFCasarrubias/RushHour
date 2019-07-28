@@ -1,4 +1,5 @@
 import "phaser";
+import {makeLogger} from "ts-loader/dist/types/logger";
 
 export class GameScene extends Phaser.Scene {
     delta: number;
@@ -20,6 +21,11 @@ export class GameScene extends Phaser.Scene {
     cursors: any;
     velocitityCajero: any = 150;
     cajasOcupadas: any = [0, 0, 0, 0];
+    colliderClienteCaja: any = [false, false, false, false];
+    colliderClienteCliente = {};
+
+    doneIntervalTime = 500;
+    doneInterval: any;
 
     constructor() {
         super({
@@ -28,7 +34,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     init(/*params: any*/): void {
-        this.delta = 5000;
+        this.delta = 3 * 1000;
         this.lastStarTime = 0;
         this.starsCaught = 0;
         this.starsFallen = 0;
@@ -208,18 +214,19 @@ export class GameScene extends Phaser.Scene {
 
         this.lines[table]++;
 
+        const velocity = Phaser.Math.Between(100, 200);
+
         customer = this.physics.add.image(x, y, "customer");
-        customer.setVelocity(Phaser.Math.Between(50, 200), 0);
+        customer.setVelocity(velocity, 0);
 
-        console.log('ID ', table + new Date().getTime());
-
-        customer['table'] = table;
-        customer['uid'] = table + new Date().getTime();
+        customer['table']       = table;
+        customer['velocity']    = velocity;
+        customer['uid']         = table + new Date().getTime();
 
         this.customers.push(customer);
 
-        this.physics.add.collider(customer, this.cashiers, this.onCustomersCollideCashier(customer, table), null, this);
-        this.physics.add.collider(customer, this.customers, this.onCustomersCollide(customer, table), null, this);
+        this.colliderClienteCaja[table]                 = this.physics.add.collider(customer, this.cashiers, this.onCustomersCollideCashier(customer, table), null, this);
+        this.colliderClienteCliente[customer['uid']]    = this.physics.add.collider(customer, this.customers, this.onCustomersCollide(customer, table), null, this);
 
 
     }
@@ -234,58 +241,35 @@ export class GameScene extends Phaser.Scene {
 
     private onCustomersCollideCashier(customer, table): () => void {
         return function () {
-            console.log('***** ', customer, table);
-
+            //console.log('ONCUSTOMERSCOLLIDECASHIER', customer, table);
 
             customer.setTint(0xff0000);
             customer.setVelocity(0, 0);
-            //customer.x = 440;
-
-            this.addCollisionLine(table);
+            customer.body.enabled = false;
+            this.colliderClienteCaja[table].active = false;
             this.cajasOcupadas[table] = 1;
 
             this.atenderCliente(table, customer);
         }
     }
 
-    atenderCliente(table, customerCollide) {
-        setTimeout(() => {
+    atenderCliente(table, customer) {
+        this.colliderClienteCaja[table].active = true;
 
-            console.log('--- lines ', this.lines);
-            console.log('--- table ', table);
-            console.log('--- customerCollide ', customerCollide);
+        setTimeout(() =>{
 
-            this.cajasOcupadas[table] = 0;
-            console.log('customers ', this.customers);
-            console.log('this.cajasOcupadas ', this.cajasOcupadas);
-
-            const findIndex = this.customers.findIndex(c => c.uid == customerCollide.uid);
-            const customer = this.customers[findIndex];
-            console.log('findIndex ', findIndex);
+            customer.destroy();
             this.cajasOcupadas[table] = 0;
 
-
-            customer.setTint(0x0000ff);
-            customer.body.enabled = false;
-
-            console.log('this.lines ', this.lines);
-            console.log(' ');
-            //customer.setVelocity(100,0);
-
-            setTimeout(() => {
-
-                console.log('remove customer ');
-                console.log('hay clientes en la fila ? ', table);
-                console.log('line  ' + table, this.lines[table]);
-
-
-                this.customers.splice(findIndex, 1);
+            clearInterval(this.doneInterval);
+            this.doneInterval = setTimeout(()=>{
                 this.lines[table]--;
-                customer.destroy();
+                console.log('this.lines ' , this.lines);
+            },this.doneIntervalTime);
 
-            }, Phaser.Math.Between(1, 3) * 1000);
+            //this.avanzarFilaALaCaja(customer, table)
 
-        }, Phaser.Math.Between(1, 5) * 1000);
+        } , 11 * 1000);
     }
 
     private onCajeroCollide(): () => void {
@@ -297,17 +281,31 @@ export class GameScene extends Phaser.Scene {
 
     private onCustomersCollide(customer, table): () => void {
         return function () {
-            console.log(" ");
-            console.log("******************* onCustomersCollide");
-            console.log('customer ', customer);
-            console.log("onCustomersCollide *******************");
-            console.log(" ");
-
-
             customer.setTint(0x00ff00);
-            customer.setVelocity(0, 0);
+        }
+    }
 
-            //this.lines[table]++;
+    private avanzarFilaClientes(table)
+    {
+        //console.log(' ');
+        //console.log('avanzar fila clientes');
+
+        for(const collider of Object.keys(this.colliderClienteCliente))
+        {
+            //this.colliderClienteCliente[collider].active = true;
+            //console.log(this.colliderClienteCliente[collider].active);
+        }
+
+    }
+
+    private avanzarFilaALaCaja(customer, table)
+    {
+        for(const cust of this.customers)
+        {
+            if(cust.body  )
+            {
+                cust.body.enabled = true;
+            }
         }
     }
 

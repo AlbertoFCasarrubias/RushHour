@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="199623d9-e277-42fa-a651-38898703446b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/gameScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameScene.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,11 +10,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -66,27 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameScene.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="267" column="37" selection-start-line="267" selection-start-column="37" selection-end-line="267" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <element signature="n#!!block;n#preload#0;n#GameScene#0" />
-                <element signature="n#!!block;n#create#0;n#GameScene#0" />
-                <element signature="n#!!block;n#update#0;n#GameScene#0" />
-                <element signature="n#!!block;n#onClick#0;n#GameScene#0" />
-                <element signature="n#!!block;n#onFall#0;n#GameScene#0" />
-                <element signature="n#!!block;n#emitStar#0;n#GameScene#0" />
-                <element signature="n#!!block;n#emitCustomer#0;n#GameScene#0" />
-                <element signature="e#5582#5793#0" />
-                <element signature="n#!!block;n#addCollisionLine#0;n#GameScene#0" />
-                <element signature="n#!!block;n#onCustomersCollideCashier#0;n#GameScene#0" />
-                <element signature="n#!!block;n#onCajeroCollide#0;n#GameScene#0" />
-                <element signature="n#!!block;n#onCustomersCollide#0;n#GameScene#0" />
-                <element signature="n#!!block;n#avanzarFila#0;n#GameScene#0" />
-              </folding>
+            <state relative-caret-position="4020">
+              <caret line="268" selection-start-line="268" selection-end-line="268" />
             </state>
           </provider>
         </entry>
@@ -95,10 +74,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="8" selection-start-column="8" selection-end-column="8" />
+              <first_editor relative-caret-position="105">
+                <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -125,6 +113,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/gameScene.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -142,13 +131,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="videogame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="videogame" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="videogame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="videogame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,16 +188,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29912000" />
+    <option name="totallyTimeSpent" value="29922000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="704" extended-state="6" />
+    <frame x="-1440" y="-96" width="1440" height="841" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.26435044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -221,7 +210,7 @@
       <window_info anchor="bottom" id="SonarLint" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.23202614" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.23364486" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -298,8 +287,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="8" selection-start-column="8" selection-end-column="8" />
+          <first_editor relative-caret-position="105">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           </first_editor>
           <second_editor />
         </state>
@@ -307,24 +296,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameScene.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="267" column="37" selection-start-line="267" selection-start-column="37" selection-end-line="267" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="n#!!block;n#preload#0;n#GameScene#0" />
-            <element signature="n#!!block;n#create#0;n#GameScene#0" />
-            <element signature="n#!!block;n#update#0;n#GameScene#0" />
-            <element signature="n#!!block;n#onClick#0;n#GameScene#0" />
-            <element signature="n#!!block;n#onFall#0;n#GameScene#0" />
-            <element signature="n#!!block;n#emitStar#0;n#GameScene#0" />
-            <element signature="n#!!block;n#emitCustomer#0;n#GameScene#0" />
-            <element signature="e#5582#5793#0" />
-            <element signature="n#!!block;n#addCollisionLine#0;n#GameScene#0" />
-            <element signature="n#!!block;n#onCustomersCollideCashier#0;n#GameScene#0" />
-            <element signature="n#!!block;n#onCajeroCollide#0;n#GameScene#0" />
-            <element signature="n#!!block;n#onCustomersCollide#0;n#GameScene#0" />
-            <element signature="n#!!block;n#avanzarFila#0;n#GameScene#0" />
-          </folding>
+        <state relative-caret-position="4020">
+          <caret line="268" selection-start-line="268" selection-end-line="268" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
